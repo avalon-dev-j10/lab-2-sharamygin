@@ -6,17 +6,22 @@ public class Main {
 
     public static void main(String[] args) {
         Shape[] shapes = new Shape[10];
-        shapes[0] = (Shape) new Circle();
-        shapes[1] = (Shape) new Circle();
-        shapes[2] = (Shape) new Circle();
-        shapes[3] = (Shape) new Rectangle();
-        shapes[4] = (Shape) new Rectangle();
-        shapes[5] = (Shape) new Rectangle();
-        shapes[6] = (Shape) new Rectangle();
-        shapes[7] = (Shape) new Triangle();
-        shapes[8] = (Shape) new Triangle();
-        shapes[9] = (Shape) new Triangle();
 
+        for(int j=0; j<10; j++){
+        int random0to3 = (int) (Math.random()*3);
+         
+        switch(random0to3){
+                case 0:
+                shapes[j] = new Circle();
+                break;
+                case 1:
+                shapes[j] = new Rectangle();
+                break;                
+                default:
+                shapes[j] = new Triangle();
+        }
+        }   
+        
         Shape max = null;
         
         for(int i = 0; i < shapes.length; i++){
